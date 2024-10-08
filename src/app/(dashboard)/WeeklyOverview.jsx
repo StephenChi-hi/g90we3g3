@@ -92,6 +92,7 @@ const WeeklyOverview = () => {
     const hours = Math.floor(secs / 3600)
     const minutes = Math.floor((secs % 3600) / 60)
     const seconds = secs % 60
+
     return `${hours.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')}`
   }
 
@@ -102,6 +103,7 @@ const WeeklyOverview = () => {
         setCountdown(prevCountdown => prevCountdown - 1)
       }, 1000)
     }
+    
     return () => clearInterval(timer)
   }, [isMining, countdown])
 

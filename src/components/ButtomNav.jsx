@@ -1,15 +1,19 @@
 'use client'
 
 import React from 'react'
-import Card from '@mui/material/Card'
+
 import { usePathname } from 'next/navigation'
+
+import Card from '@mui/material/Card'
+
 import Link from './Link'
 
 function ButtomNav() {
   const pathname = usePathname()
 
- const isActive = (path) => pathname === path
+  const isActive = path => pathname === path
   const activeColor = 'var(--mui-palette-primary-main)'
+
   return (
     <div>
       {' '}
