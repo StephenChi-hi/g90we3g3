@@ -42,12 +42,7 @@ const Transactions = () => {
     <Card className='bs-full'>
       <CardHeader
         title='Activities'
-        // subheader={
-        //   <p className='mbs-3'>
-        //     <span className='font-medium text-textPrimary'>Total 48.5% Growth 😎</span>
-        //     <span className='text-textSecondary'>this month</span>
-        //   </p>
-        // }
+        
       />
       <CardContent className='!pbs-5-'>
         <Grid container spacing={2}>

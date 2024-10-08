@@ -1,23 +1,25 @@
 'use client'
 
 import React from 'react'
-import Link from './Link'
 import Card from '@mui/material/Card'
 import { usePathname } from 'next/navigation'
+import Link from './Link'
 
 function ButtomNav() {
   const pathname = usePathname()
 
-  const isActive = path => pathname === path
-
-  const activcolor = 'var(--mui-palette-primary-main)'
-
+ const isActive = (path) => pathname === path
+  const activeColor = 'var(--mui-palette-primary-main)'
   return (
     <div>
       {' '}
-      <Card className=' fixed bottom-0 flex w-full bg-white- text-gray-500- px-6 py-3 justify-between'>
+      <Card className=' fixed bottom-0 flex w-full bg-white- text-[14px] text-gray-500- px-6 py-3 justify-between'>
         {' '}
-        <Link href='/' className=' flex flex-col items-center '>
+        <Link
+          style={{ color: isActive('/') ? activeColor : 'inherit' }}
+          href='/'
+          className=' flex flex-col items-center '
+        >
           {' '}
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -35,7 +37,11 @@ function ButtomNav() {
           </svg>
           <p>Home</p>
         </Link>
-        <Link href='/friends' className=' flex flex-col items-center '>
+        <Link
+          style={{ color: isActive('/friends') ? activeColor : 'inherit' }}
+          href='/friends'
+          className=' flex flex-col items-center '
+        >
           {' '}
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -53,7 +59,11 @@ function ButtomNav() {
           </svg>
           <p>Friends</p>
         </Link>
-        <Link href='/earn' className=' flex flex-col items-center '>
+        <Link
+          style={{ color: isActive('/earn') ? activeColor : 'inherit' }}
+          href='/earn'
+          className=' flex flex-col items-center '
+        >
           {' '}
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -71,7 +81,11 @@ function ButtomNav() {
           </svg>
           <p>Earn</p>
         </Link>
-        <Link href='/airdrop' className=' flex flex-col items-center '>
+        <Link
+          style={{ color: isActive('/airdrop') ? activeColor : 'inherit' }}
+          href='/airdrop'
+          className=' flex flex-col items-center '
+        >
           {' '}
           <svg
             xmlns='http://www.w3.org/2000/svg'

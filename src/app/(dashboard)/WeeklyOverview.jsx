@@ -85,47 +85,45 @@ const WeeklyOverview = () => {
     }
   }
 
- const [countdown, setCountdown] = useState(24 * 60 * 60) // 24 hours in seconds
- const [isMining, setIsMining] = useState(false)
+  const [countdown, setCountdown] = useState(24 * 60 * 60) // 24 hours in seconds
+  const [isMining, setIsMining] = useState(false)
 
- // Function to format time into "HH : MM : SS"
- const formatTime = secs => {
-   const hours = Math.floor(secs / 3600)
-   const minutes = Math.floor((secs % 3600) / 60)
-   const seconds = secs % 60
-   return `${hours.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')}`
- }
+  const formatTime = secs => {
+    const hours = Math.floor(secs / 3600)
+    const minutes = Math.floor((secs % 3600) / 60)
+    const seconds = secs % 60
+    return `${hours.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')}`
+  }
 
- useEffect(() => {
-   let timer
-   if (isMining && countdown > 0) {
-     timer = setInterval(() => {
-       setCountdown(prevCountdown => prevCountdown - 1)
-     }, 1000)
-   }
-   return () => clearInterval(timer)
- }, [isMining, countdown])
+  useEffect(() => {
+    let timer
+    if (isMining && countdown > 0) {
+      timer = setInterval(() => {
+        setCountdown(prevCountdown => prevCountdown - 1)
+      }, 1000)
+    }
+    return () => clearInterval(timer)
+  }, [isMining, countdown])
 
- useEffect(() => {
-   if (countdown <= 0) {
-     setIsMining(false)
-   }
- }, [countdown])
+  useEffect(() => {
+    if (countdown <= 0) {
+      setIsMining(false)
+    }
+  }, [countdown])
 
- const handleStartMining = () => {
-   setIsMining(true)
- }
+  const handleStartMining = () => {
+    setIsMining(true)
+  }
 
- // Different bar heights and colors
- const bars = [
-   { height: 80, color: 'var(--mui-palette-customColors-trackBg)' },
-   { height: 100, color: 'var(--mui-palette-customColors-trackBg)' },
-   { height: 65, color: 'var(--mui-palette-customColors-trackBg)' },
-   { height: 130, color: 'var(--mui-palette-primary-main)' }, // Special bar
-   { height: 96, color: 'var(--mui-palette-customColors-trackBg)' },
-   { height: 68, color: 'var(--mui-palette-customColors-trackBg)' },
-   { height: 120, color: 'var(--mui-palette-customColors-trackBg)' }
- ]
+  const bars = [
+    { height: 80, color: 'var(--mui-palette-customColors-trackBg)' },
+    { height: 100, color: 'var(--mui-palette-customColors-trackBg)' },
+    { height: 65, color: 'var(--mui-palette-customColors-trackBg)' },
+    { height: 130, color: 'var(--mui-palette-primary-main)' }, 
+    { height: 96, color: 'var(--mui-palette-customColors-trackBg)' },
+    { height: 68, color: 'var(--mui-palette-customColors-trackBg)' },
+    { height: 120, color: 'var(--mui-palette-customColors-trackBg)' }
+  ]
 
   return (
     <Card>

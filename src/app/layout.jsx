@@ -19,7 +19,8 @@ const RootLayout = ({ children }) => {
 
   return (
     <html id='__next' dir={direction}>
-      <body className='flex is-full min-bs-full flex-auto flex-col'>{children}</body>
+      <style>@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');</style>
+      <body className='flex is-full min-bs-full flex-auto flex-col play-regular'>{children}</body>
     </html>
   )
 }

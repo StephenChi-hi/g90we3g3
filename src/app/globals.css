@@ -168,3 +168,17 @@ code {
     transform: scale(1); /* Back to original size */
   }
 }
+
+.play-regular {
+  font-family: "Play", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.play-bold {
+  font-family: "Play", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
