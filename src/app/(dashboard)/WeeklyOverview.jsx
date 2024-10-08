@@ -98,12 +98,13 @@ const WeeklyOverview = () => {
 
   useEffect(() => {
     let timer
+    
     if (isMining && countdown > 0) {
       timer = setInterval(() => {
         setCountdown(prevCountdown => prevCountdown - 1)
       }, 1000)
     }
-    
+
     return () => clearInterval(timer)
   }, [isMining, countdown])
 
